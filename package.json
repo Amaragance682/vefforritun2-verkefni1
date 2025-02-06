@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build-script": "node src/generateHTML.js && cpy \"src/public/*\" dist/ --recursive",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "cpy-cli": "^5.0.0",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "jest": "^29.7.0"
+  }
+}
