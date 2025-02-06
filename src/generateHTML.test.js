@@ -27,6 +27,16 @@ describe('generateHTML', () => {
 
             expect(result).toBe(true);
         });
+        it('returns false if the data contains no null values', () => {
+            const data = {
+                "sigma": "alpha",
+                "skibittti": "beta",
+            }
+
+            const result = isNullOneLevel(data);
+
+            expect(result).toBe(false);
+        });
     });
 
     describe('generateIndexHTML', () => {

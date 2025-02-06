@@ -39,7 +39,6 @@ export function generateCategoryHTML(category) {
 
   const content = category.content;
   if (!content || !content.questions) {
-    console.error("No content found for category", title);
     return null;
   }
   return `
