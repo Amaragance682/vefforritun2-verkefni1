@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build-script": "node src/generateHTML.js && cpy \"src/public/*\" dist/ --recursive",
+    "build-script": "mkdir dist && node src/generateHTML.js && cpy \"src/public/*\" dist/ --recursive",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "type": "module",

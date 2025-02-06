@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { readJson } from './readData.js';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 
 const INDEX_PATH = 'data/index.json';
 const OUTPUT_DIR = './dist';
@@ -97,6 +98,7 @@ export function generateCategoryHTML(category) {
 
 
 async function main() {
+  console.log("initialized");
 
   const indexData = await readJson(INDEX_PATH);
   if (!Array.isArray(indexData)) {
@@ -166,9 +168,7 @@ export function escapeHTML(unsafe) {
     .replace(/'/g, '&#039;');
 };
 
-if (import.meta.url.endsWith(process.argv[1])) {
-  main().catch((error) => {
-    console.error('Error in main:', error);
-    process.exit(1);
-  });
+const __filename = fileURLToPath(import.meta.url);
+if (__filename === process.argv[1]) {
+  main();
 }
