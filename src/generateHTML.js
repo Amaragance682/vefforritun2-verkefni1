@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { readJson } from './readData.js';
+import process from 'node:process';
 
 const INDEX_PATH = 'data/index.json';
 const OUTPUT_DIR = './dist';
